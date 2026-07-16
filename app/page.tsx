@@ -145,7 +145,7 @@ export default function Page() {
 
         {/* ============ MANIFESTO ============ */}
         <section id="fusion" className="py-28 w-screen">
-          <div className="glass w-[38%] px-10 py-14">
+          <div className="glass w-[90%] mx-auto px-7 py-10 md:mx-0 md:w-[38%] md:px-10 md:py-14">
             <Reveal>
               <p className="eyebrow mb-6">The philosophy</p>
               <h2 className="display-section">
@@ -252,7 +252,7 @@ export default function Page() {
         <ProductsSection watches={WATCHES} />
 
         {/* ============ FOOTER ============ */}
-        <footer className="glass border-x-0 border-b-0 px-6 pb-10 pt-20">
+        <footer className="glass border-x-0 border-b-0 px-6 pb-10 pt-20 !bg-noir/20 !backdrop-blur-sm">
           <div className="mx-auto">
             <Reveal>
               <h2 className="font-display uppercase leading-none text-porcelain/20 [font-size:clamp(3rem,13vw,11rem)]">
