@@ -1,0 +1,4 @@
+node_modules
+.next
+nohup.out
+next-env.d.ts

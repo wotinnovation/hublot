@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  @apply bg-noir text-porcelain font-sans antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  @apply bg-gold text-noir;
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[0.65rem] md:text-xs uppercase tracking-widest2 text-gold;
+  }
+
+  .hairline {
+    @apply border border-porcelain/10;
+  }
+
+  .glass {
+    @apply bg-noir/60 backdrop-blur-md border border-porcelain/10;
+  }
+
+  .display-hero {
+    @apply font-display uppercase leading-[0.95] text-porcelain;
+    font-size: clamp(2.8rem, 9vw, 8.5rem);
+  }
+
+  .display-section {
+    @apply font-display uppercase leading-[1.02] text-porcelain;
+    font-size: clamp(2rem, 5vw, 4.2rem);
+  }
+
+  .nav-link {
+    @apply font-mono text-[0.65rem] uppercase tracking-widest2 text-smoke transition-colors duration-300 hover:text-gold;
+  }
+}
+
+/* Gold vertical progress rail (right edge) */
+.rail {
+  position: fixed;
+  right: clamp(12px, 2.4vw, 32px);
+  top: 50%;
+  transform: translateY(-50%);
+  height: 38vh;
+  width: 1px;
+  background: rgba(243, 239, 230, 0.12);
+  z-index: 40;
+  pointer-events: none;
+}
+
+.rail__fill {
+  position: absolute;
+  inset: 0;
+  transform-origin: top center;
+  transform: scaleY(0);
+  background: linear-gradient(to bottom, #c8a35f, #b08d57);
+}
+
+.rail__label {
+  position: absolute;
+  right: 10px;
+  top: 100%;
+  margin-top: 14px;
+  white-space: nowrap;
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  color: #9a938a;
+  writing-mode: vertical-rl;
+}
+
+/* Reveal helper — hidden until GSAP shows it */
+.will-reveal {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .will-reveal {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+  }
+  .rail {
+    display: none;
+  }
+}
